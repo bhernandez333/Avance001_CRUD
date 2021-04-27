@@ -2,7 +2,9 @@ const app = require('express')();
 const bodyParser = require('body-parser');
 const miMiddleware = require('./middleware/logger');
 const port = 3000;
+var cors = require('cors')
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(miMiddleware.logger);
